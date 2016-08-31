@@ -428,6 +428,16 @@ $newline never
     \
     bin
 |]
+    it "pre content is untouched" $ helper
+      "<p>foo></p><pre>bar\nbaz\nbin</pre>"
+      [hamlet|
+$newline never
+<p>foo
+<pre>
+    bar
+    baz
+    bin
+|]
     it "indented newline" $ helper
       "<p>foo</p><pre>bar\nbaz\nbin</pre>"
       [hamlet|
